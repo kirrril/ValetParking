@@ -22,6 +22,9 @@ public class CarManager : MonoBehaviour
     [SerializeField]
     private TMP_Text price;
 
+    public event Action carSelected;
+    public event Action carDeselected;
+
     void Start()
     {
         RayGun.Instance.CarSelected += GetCarToDrive;
@@ -34,6 +37,7 @@ public class CarManager : MonoBehaviour
         HighlightSelected(receivedCar);
         DisplayCarInfos(receivedCar);
         driveControl.SetActive(true);
+        carSelected?.Invoke();
     }
 
     private void HighlightSelected(GameObject gameObject)
@@ -65,9 +69,8 @@ public class CarManager : MonoBehaviour
         }
 
         driveControl.SetActive(false);
-
         carInfoDisplay.SetActive(false);
-
         selectedCar = null;
+        carDeselected?.Invoke();
     }
 }

@@ -16,6 +16,9 @@ public class ContentSpawner : MonoBehaviour
     [SerializeField]
     private Cars cars;
 
+    [SerializeField]
+    private GameObject indicators;
+
     private GameObject parkingMarkings;
     private GameObject parkingSpots;
     private GameObject parkingPlaces;
@@ -79,5 +82,7 @@ public class ContentSpawner : MonoBehaviour
                 availableParkingPlaces.RemoveAt(randomPlaceIndex);
             }
         }
+
+        indicators.SetActive(true);
     }
 }

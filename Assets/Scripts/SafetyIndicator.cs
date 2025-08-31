@@ -20,7 +20,13 @@ public class SafetyIndicator : MonoBehaviour
     private GameObject carTrigger;
     private CollisionHandler collisionHandler;
 
-    void OnEnable()
+    void Start()
+    {
+        carManager.carSelected += OnCarSelected;
+        carManager.carDeselected += OnCarDeselected;
+    }
+
+    void OnCarSelected()
     {
         car = carManager.selectedCar;
         if (car != null)
@@ -33,14 +39,14 @@ public class SafetyIndicator : MonoBehaviour
         collisionHandler.crush += HandleBumps;
     }
 
-    void OnDisable()
+    void OnCarDeselected()
     {
          collisionHandler.crush -= HandleBumps;
     }
 
     private void HandleBumps()
     {
-        if (safetyScale > 0)
+        if (safetyScale >= 0.1f)
         {
             safetyScale -= 0.1f;
             transform.GetComponent<Image>().fillAmount = safetyScale;
@@ -69,6 +75,5 @@ public class SafetyIndicator : MonoBehaviour
             Handheld.Vibrate();
             yield return new WaitForSeconds(0.5f);
         }
-        Application.Quit();
     }
 }

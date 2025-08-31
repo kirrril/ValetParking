@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: MyHome
-  productName: ValetParking9
+  productName: ValetParking
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.18447006, g: 0.1709238, b: 0.21698111, a: 1}

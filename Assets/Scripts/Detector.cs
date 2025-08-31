@@ -26,6 +26,17 @@ public class Detector : MonoBehaviour
     private List<int> priceList = new List<int>();
     private List<int> consecutiveIncreasingDecreasing = new List<int>();
 
+    public event Action YellowSorted;
+    public event Action RedSorted;
+    public event Action WhiteSorted;
+    public event Action BlueSorted;
+    public event Action FordSorted;
+    public event Action ToyotaSorted;
+    public event Action BMWSorted;
+    public event Action PriceSorted;
+    public event Action YearSorted;
+    public event Action PowerSorted;
+
 
     public void PlaceCar(int placeIndex, GameObject placedCar)
     {
@@ -86,6 +97,35 @@ public class Detector : MonoBehaviour
                 return blueCars;
             default:
                 return new List<int>();
+        }
+    }
+
+    private Action GetAction(string parameter)
+    {
+        switch (parameter)
+        {
+            case "Red":
+                return RedSorted;
+            case "Yellow":
+                return YellowSorted;
+            case "White":
+                return WhiteSorted;
+            case "Blue":
+                return BlueSorted;
+            case "Ford":
+                return FordSorted;
+            case "Toyota":
+                return ToyotaSorted;
+            case "BMW":
+                return BMWSorted;
+            case "price":
+                return PriceSorted;
+            case "year":
+                return YearSorted;
+            case "power":
+                return PowerSorted;
+            default:
+                return null;
         }
     }
 
@@ -431,6 +471,8 @@ public class Detector : MonoBehaviour
 
     private void YouSucceededColor(string parameter)
     {
+        Action action = GetAction(parameter);
+        action?.Invoke();
 
         foreach (int index in GetColorList(parameter))
         {
@@ -459,6 +501,9 @@ public class Detector : MonoBehaviour
 
     private void YouSucceededBrand(string parameter)
     {
+        Action action = GetAction(parameter);
+        action?.Invoke();
+
         foreach (int index in GetBrandList(parameter))
         {
             string parkingPlaceNumber = index.ToString();
@@ -487,6 +532,8 @@ public class Detector : MonoBehaviour
     private void YouSucceededParameter(string parameter)
     {
         List<int> parameterList = GetParameterList(parameter);
+        Action action = GetAction(parameter);
+        action?.Invoke();
 
         foreach (int index in parameterList)
         {
@@ -518,6 +565,3 @@ public class Detector : MonoBehaviour
         }
     }
 }
-
-
-

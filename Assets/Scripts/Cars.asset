@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab5be11ae2d4d3428b36a39348796ef, type: 3}
+  m_Name: Cars
+  m_EditorClassIdentifier: 
+  carsList:
+  - prefab3D: {fileID: 2566066656057354669, guid: b6f66d9e69cb5394bb8106d82bcb1233, type: 3}
+    carBrand: Ford
+    modelName: Mustang GT
+    productionYear: 2018
+    motorPower: 450
+    carPrice: 40000
+    carColor: Blue
+  - prefab3D: {fileID: 2566066656057354669, guid: ad9a57e69c3c2f747b2efd44a0a75882, type: 3}
+    carBrand: Ford
+    modelName: Mustang GT
+    productionYear: 2019
+    motorPower: 472
+    carPrice: 45000
+    carColor: Yellow
+  - prefab3D: {fileID: 2566066656057354669, guid: 09a3eebb9e5b21341a7fb3c0561c7298, type: 3}
+    carBrand: Ford
+    modelName: Mustang GT
+    productionYear: 2020
+    motorPower: 435
+    carPrice: 42000
+    carColor: White
+  - prefab3D: {fileID: 2566066656057354669, guid: eca553af18b895849ab7535c36ec9e16, type: 3}
+    carBrand: Ford
+    modelName: Mustang GT
+    productionYear: 2021
+    motorPower: 489
+    carPrice: 50000
+    carColor: Red
+  - prefab3D: {fileID: 3862209888208101265, guid: f97a1a1292137b14eb19fe2873560797, type: 3}
+    carBrand: Toyota
+    modelName: Yaris
+    productionYear: 2022
+    motorPower: 116
+    carPrice: 15000
+    carColor: White
+  - prefab3D: {fileID: 3862209888208101265, guid: 39af1d12891224c48b55a032814f5c91, type: 3}
+    carBrand: Toyota
+    modelName: Yaris
+    productionYear: 2020
+    motorPower: 116
+    carPrice: 12000
+    carColor: Red
+  - prefab3D: {fileID: 3862209888208101265, guid: bdb495ac7d4efed4f95f4dcff73fa490, type: 3}
+    carBrand: Toyota
+    modelName: Yaris
+    productionYear: 2021
+    motorPower: 125
+    carPrice: 17000
+    carColor: Blue
+  - prefab3D: {fileID: 3862209888208101265, guid: ed98fbd60b621c1418447890a4b24372, type: 3}
+    carBrand: Toyota
+    modelName: Yaris
+    productionYear: 2022
+    motorPower: 116
+    carPrice: 58000
+    carColor: Yellow
+  - prefab3D: {fileID: 3862209888208101265, guid: 36da95577f340c34a820a3628f72c9a1, type: 3}
+    carBrand: BMW
+    modelName: 118i
+    productionYear: 2022
+    motorPower: 136
+    carPrice: 22000
+    carColor: White
+  - prefab3D: {fileID: 3862209888208101265, guid: d8d10428bb5ec3145b48edf346bee953, type: 3}
+    carBrand: BMW
+    modelName: Yellow
+    productionYear: 2020
+    motorPower: 136
+    carPrice: 19000
+    carColor: Yellow
+  - prefab3D: {fileID: 3862209888208101265, guid: d538444dc76da8d4fa510732f5343952, type: 3}
+    carBrand: BMW
+    modelName: 118d
+    productionYear: 2020
+    motorPower: 150
+    carPrice: 17000
+    carColor: Red
+  - prefab3D: {fileID: 3862209888208101265, guid: a72c14fb908daf840ac68ec68c2bd399, type: 3}
+    carBrand: BMW
+    modelName: 118d
+    productionYear: 2023
+    motorPower: 150
+    carPrice: 27000
+    carColor: Blue

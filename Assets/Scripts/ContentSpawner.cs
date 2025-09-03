@@ -18,18 +18,15 @@ public class ContentSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject indicators;
-
     private GameObject parkingMarkings;
     private GameObject parkingSpots;
     private GameObject parkingPlaces;
-
     private List<Transform> availableParkingPlaces = new List<Transform>();
-
     [SerializeField]
     private Transform groundPlaneStage;
-
     [SerializeField]
     private PlaneFinderBehaviour planeFinder;
+
 
     public void InstantiateParkingLot(HitTestResult hitTestResult)
     {
@@ -37,13 +34,18 @@ public class ContentSpawner : MonoBehaviour
 
         if (parkingMarkings != null || parkingSpots != null) return;
 
+        if (planeFinder != null)
+        {
+            planeFinder.enabled = false;
+        }
+
         parkingMarkings = Instantiate(parkingMarkingsPrefab, hitTestResult.Position, hitTestResult.Rotation, groundPlaneStage);
         parkingSpots = Instantiate(parkingSpotsPrefab, hitTestResult.Position, hitTestResult.Rotation, groundPlaneStage);
         parkingPlaces = Instantiate(parkingPlacesPrefab, hitTestResult.Position, hitTestResult.Rotation, groundPlaneStage);
 
         if (parkingSpots != null)
         {
-            for (int i = 1; i < 25; i++)
+            for (int i = 1; i <= 24; i++)
             {
                 availableParkingPlaces.Add(parkingSpots.transform.Find($"Spot{i}"));
             }
@@ -52,11 +54,6 @@ public class ContentSpawner : MonoBehaviour
         if (availableParkingPlaces.Count == 24)
         {
             InstantiateCars();
-        }
-
-        if (planeFinder != null)
-        {
-            planeFinder.enabled = false;
         }
     }
 

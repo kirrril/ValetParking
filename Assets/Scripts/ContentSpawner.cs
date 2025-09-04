@@ -14,6 +14,9 @@ public class ContentSpawner : MonoBehaviour
     private GameObject parkingPlacesPrefab;
 
     [SerializeField]
+    private GameObject initInstructions;
+
+    [SerializeField]
     private Cars cars;
 
     [SerializeField]
@@ -38,6 +41,8 @@ public class ContentSpawner : MonoBehaviour
         {
             planeFinder.enabled = false;
         }
+
+        initInstructions.SetActive(false);
 
         parkingMarkings = Instantiate(parkingMarkingsPrefab, hitTestResult.Position, hitTestResult.Rotation, groundPlaneStage);
         parkingSpots = Instantiate(parkingSpotsPrefab, hitTestResult.Position, hitTestResult.Rotation, groundPlaneStage);

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SafetyIndicator : MonoBehaviour
@@ -75,5 +76,7 @@ public class SafetyIndicator : MonoBehaviour
             Handheld.Vibrate();
             yield return new WaitForSeconds(0.5f);
         }
+
+        SceneManager.LoadScene("EndGameScene");
     }
 }
